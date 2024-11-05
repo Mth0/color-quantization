@@ -1,6 +1,6 @@
 # Resume
 
-I discute about the color quantization problem a try to solve it, approximately, using the GRASP meta-heuristics. The .ipynb file has the implementation and some examples of its use. The "color quantization" part are more mathematical, so you can skip it if you want. At the end I show some results of my implementation.
+I discute about the color quantization problem a try to solve it, approximately, using the GRASP meta-heuristics. The .ipynb file has the implementation in Julia and some examples of its use. I implement GRASP in a sequential way, but also in a distributed version. It seems the algorithm got really faster and it helped to test it in some larger images. The "color quantization" part are more mathematical, so you can skip it if you want. At the end I show some results of my implementation.
 
 # Color quantization
 
@@ -32,7 +32,7 @@ Choices. So, to define what palette is optimum is impractical. For solve this, I
 
 # Results
 
-A tested this implementation in some images.
+I tested this implementation in some images.
 
 ## Naruto image
 
@@ -129,3 +129,7 @@ Now, what if we a real image? Let's see what happens. I used $64$ colors, $16$ p
 ![gatos_45](https://github.com/user-attachments/assets/4387deee-ff07-4d1a-883e-1c4e6b169394)
 
 As you can see, fortunately in the first iteration GRASP got a good greedy solution and the image hasn't changed too much after that.
+
+# Some conclusions
+
+GRASP seems to work fine, but the greedy search and local search are **really** expansive and probably I'll try to fasten it in the future. Also I think I could this implementation more smart when choosing a greedy solution. As you saw in the $16$-colors Naruto, the first greedy solution was not that good. I think it's possible to improve the chance of getting a good greedy solution seeing, for example, the color distribuition of the image GRASP is coloring.
